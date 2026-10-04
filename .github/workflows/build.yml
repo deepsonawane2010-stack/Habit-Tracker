@@ -8,18 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Extract Android project
+        run: |
+          unzip -o Habit_Tracker_GitHub_Actions_Builder-1.zip
 
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
-      
-      
-    
 
       - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -33,6 +33,7 @@ jobs:
           cd "$PROJECT_DIR"
           ls -la
           gradle assembleDebug
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
