@@ -31,6 +31,7 @@ jobs:
           PROJECT_DIR=$(dirname "$(find . -name settings.gradle -type f | head -1)")
           echo "Project found at: $PROJECT_DIR"
           cd "$PROJECT_DIR"
+          sed -i "/android {/a\    namespace 'com.example.habittracker'" app/build.gradle
           ls -la
           gradle assembleDebug
 
