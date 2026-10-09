@@ -13,7 +13,7 @@ jobs:
 
       - name: Extract Android project
         run: |
-          unzip -o Habit_Tracker_GitHub_Actions_Builder_FIXED-1.zip
+          unzip -o Habit_Tracker_GitHub_Actions_Builder_FIXED-2.zip
 
       - name: Set up Java
         uses: actions/setup-java@v4
